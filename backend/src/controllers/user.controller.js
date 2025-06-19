@@ -116,7 +116,7 @@ export async function getFriendRequests(req, res){
             status : "pending"
         }).populate("sender", "fullName profilePic nativeLanguage learningLanguage");
 
-        const acceptedReqs = await friendRequest.find({
+        const acceptedReqs = await FriendRequest.find({
             sender: req.user.id,
             status : "accepted"
         }).populate("recipient", "fullName profilePic");
@@ -125,7 +125,7 @@ export async function getFriendRequests(req, res){
      }
      catch(err){
         console.log("Error in getPendingFriendRequests comtroller: ",err.message);
-        res.satus(500).json({ message : "Internal Server Error"});
+        res.status(500).json({ message : "Internal Server Error"});
      }
 }
 
