@@ -12,6 +12,7 @@ import useAuthUser from './hooks/useAuthUser.js'
 import Layout from './components/Layout.jsx'
 import { useThemeStore } from './store/useThemeStore.js'
 import NotificationsPage from './pages/NotificationsPage.jsx'
+import FriendsPage from './pages/FriendsPage.jsx'
 
 const App = () => {
   //axios 
@@ -72,6 +73,7 @@ const App = () => {
             ) : (
               <Navigate to = "/login"/>
             )}/>
+            <Route path="/friends" element={<FriendsPage />} />
         </Routes>
         <Toaster/>
     </div>
